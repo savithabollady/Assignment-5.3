@@ -1,1 +1,60 @@
-# Assignment-5.3
+1. Test whether two vectors are exactly equal (element by element).
+vec1 = c(rownames(mtcars[1:15,]))
+vec2 = c(rownames(mtcars[11:25,]))
+
+ANSWER:
+> setequal(vec1, vec2)
+[1] FALSE
+> identical(vec1, vec2)
+[1] FALSE
+
+2. Sort the character vector in ascending order and descending order.
+vec1 = c(rownames(mtcars[1:15,]))
+vec2 = c(rownames(mtcars[11:25,]))
+
+ANSWER:
+Ascending
+> sort(vec1)
+ [1] "1"  "10" "11" "12" "13" "14" "15" "2"  "3"  "4"  "5"  "6"  "7"  "8" 
+[15] "9" 
+> sort(vec2)
+ [1] "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24"
+[15] "25"
+
+
+Dscending:
+> sort(vec1,decreasing = TRUE)
+ [1] "9"  "8"  "7"  "6"  "5"  "4"  "3"  "2"  "15" "14" "13" "12" "11" "10"
+[15] "1" 
+> sort(vec2,decreasing = TRUE)
+ [1] "25" "24" "23" "22" "21" "20" "19" "18" "17" "16" "15" "14" "13" "12"
+[15] "11"
+
+3. What is the major difference between str() and paste() show an example.
+ANSWER:
+str() used to  examine the data frame structure. By default, character strings inside a data frame will be converted to factors:
+> str(mtcars)
+'data.frame':	32 obs. of  12 variables:
+ $ X   : Factor w/ 32 levels "AMC Javelin",..: 18 19 5 13 14 31 7 21 20 22 ...
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : int  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : int  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : int  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : int  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: int  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: int  4 4 1 1 2 1 4 2 2 4 ...
+ 
+ The function paste() is use to create and build strings. 
+ paste() takes one or more R objects, converts them to "character", and then it concatenates (pastes) them to 
+ form one or several character strings
+ 
+ IloveR <- paste("I", "love", "R", sep = "-")
+ 
+ 
+
+4. Introduce a separator when concatenating the strings.
+
